@@ -1,0 +1,25 @@
+Warning: Google App Engine Java 7 runtime is deprecated.
+Warning: See https://cloud.google.com/appengine/docs/deprecations/java7
+fev 04, 2019 12:19:40 AM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+INFO: Overwriting system property key 'java.util.logging.config.file', value '/home/lsaippa/projects/udacity/gradle-project/google-cloud-sdk-232.0.0-linux-x86_64/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/config/sdk/logging.properties' with value 'WEB-INF/logging.properties' from '/home/lsaippa/projects/udacity/gradle-project/backend/build/exploded-backend/WEB-INF/appengine-web.xml'
+fev 04, 2019 12:19:40 AM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: Logging to JettyLogger(null) via com.google.apphosting.utils.jetty.JettyLogger
+fev 04, 2019 2:19:40 AM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+WARNING: Your working directory, (/home/lsaippa/projects/udacity/gradle-project) is not equal to your 
+web application root (/home/lsaippa/projects/udacity/gradle-project/backend/build/exploded-backend)
+You will not be able to access files from your working directory on the production server.
+
+fev 04, 2019 2:19:40 AM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: jetty-6.1.x
+fev 04, 2019 2:19:41 AM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: Started SelectChannelConnector@localhost:8080
+fev 04, 2019 2:19:41 AM com.google.appengine.tools.development.AbstractModule startup
+INFO: Module instance default is running at http://localhost:8080/
+fev 04, 2019 2:19:41 AM com.google.appengine.tools.development.AbstractModule startup
+INFO: The admin console is running at http://localhost:8080/_ah/admin
+fev 04, 2019 12:19:41 AM com.google.appengine.tools.development.DevAppServerImpl doStart
+INFO: Dev App Server is now running
+fev 04, 2019 12:19:44 AM com.google.appengine.repackaged.com.google.protobuf.UnsafeUtil supportsUnsafeByteBufferOperations
+WARNING: platform method missing - proto runtime falling back to safer methods: java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "accessClassInPackage.sun.misc")
+fev 04, 2019 12:19:44 AM com.google.appengine.repackaged.com.google.protobuf.UnsafeUtil supportsUnsafeArrayOperations
+WARNING: platform method missing - proto runtime falling back to safer methods: java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "accessClassInPackage.sun.misc")
