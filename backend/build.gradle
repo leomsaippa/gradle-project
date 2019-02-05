@@ -24,6 +24,7 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 
 dependencies {
+    appengine.tools.cloudSdkHome = "/home/lsaippa/projects/udacity/gradle-project/google-cloud-sdk-232.0.0-linux-x86_64/google-cloud-sdk"
     implementation project(':java-joker')
 
     implementation 'com.google.endpoints:endpoints-framework:2.0.9'
