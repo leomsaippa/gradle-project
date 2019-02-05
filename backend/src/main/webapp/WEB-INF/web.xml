@@ -7,8 +7,7 @@
         <!-- V2: End of v2 section -->
         <init-param>
             <param-name>services</param-name>
-            <param-value>com.udacity.gradle.builditbigger.backend.MyEndpoint</param-value>
-        </init-param>
+            <param-value>com.udacity.gradle.builditbigger.backend.MyEndpoint,com.udacity.gradle.builditbigger.backend.JokerEndpoint</param-value>        </init-param>
     </servlet>
     <servlet-mapping>
         <!-- V2: Start of v2 section -->
@@ -16,4 +15,9 @@
         <url-pattern>/_ah/api/*</url-pattern>
         <!-- V2: End of v2 section -->
     </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 </web-app>
