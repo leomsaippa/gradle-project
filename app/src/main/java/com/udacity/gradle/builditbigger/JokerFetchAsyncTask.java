@@ -2,6 +2,8 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.annotation.VisibleForTesting;
 import android.support.v4.util.Pair;
 import android.widget.Toast;
 
@@ -13,10 +15,13 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
+import utilTest.SimpleIdlingResource;
+
 public class JokerFetchAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
 
     private static MyApi myApiService = null;
-    private Context context;
+
+    private SimpleIdlingResource mIdlingResource;
 
     interface JokerListener{
         void onJokerFetching();
@@ -34,6 +39,8 @@ public class JokerFetchAsyncTask extends AsyncTask<Pair<Context, String>, Void, 
     protected void onPreExecute() {
         super.onPreExecute();
         jokerListener.onJokerFetching();
+        //For test
+        getIdlingResource().setIdleState(false);
     }
 
     @Override
@@ -64,5 +71,25 @@ public class JokerFetchAsyncTask extends AsyncTask<Pair<Context, String>, Void, 
     @Override
     protected void onPostExecute(String result) {
         jokerListener.onJokerFetched(result);
+        //For test
+        getIdlingResource().setIdleState(true);
+    }
+
+    @Override
+    protected void onCancelled() {
+        super.onCancelled();
+        mIdlingResource.setIdleState(true);
+    }
+
+    /**
+     * Only called from test, creates and returns a new {@link SimpleIdlingResource}.
+     */
+    @NonNull
+    @VisibleForTesting(otherwise = VisibleForTesting.PACKAGE_PRIVATE)
+    public SimpleIdlingResource getIdlingResource() {
+        if (mIdlingResource == null) {
+            mIdlingResource = new SimpleIdlingResource();
+        }
+        return mIdlingResource;
     }
 }
